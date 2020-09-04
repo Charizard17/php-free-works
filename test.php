@@ -134,5 +134,138 @@
         }
     ?> -->
 
+
+
+    <!-- <h4>If Statements (con't)</h4>
+    <?php
+        function getMax($num1, $num2, $num3){
+            if ($num1 >= $num2 && $num1 >= $num3) {
+                return $num1;
+            } elseif ($num2 >= $num1 && $num2 >= $num3) {
+                return $num2;
+            } else {
+                return $num3;
+            }
+        }
+
+        echo "Bigger is ".getMax(4300, 9000, 3010);
+    ?> -->
+
+
+
+    <!-- <h4>A Better Calculator</h4>
+    <form action="test.php" method="post">
+        First number: <input type="number" name="num1"><br>
+        Operator: <input type="text" name="op"><br>
+        Second number: <input type="number" name="num2"><br>
+        <input type="submit">
+    </form>
+    <?php
+        $num1 = $_POST["num1"];
+        $num2 = $_POST["num2"];
+        $op = $_POST["op"];
+
+        if ($op == "+"){
+            echo $num1 + $num2;
+        } elseif ($op == "-"){
+            echo $num1 - $num2;
+        } elseif ($op == "/"){
+            echo $num1 / $num2;
+        } elseif ($op == "*"){
+            echo $num1 * $num2;
+        } else {
+            echo "Invalid Operator";
+        }
+    ?> -->
+
+
+
+    <!-- <h4>Switch Statements</h4>
+    <form action="test.php" method="post">
+        What was your grade?
+        <input type="text" name="grade">
+        <input type="submit">
+    </form>
+    <?php
+        $grade = $_POST["grade"];
+        switch ($grade) {
+            case "A":
+                echo "You did amazing!";
+                break;
+            case "B":
+                echo "You did pretty good";
+                break;
+            case "C":
+                echo "You did poorly";
+                break;
+            case "D":
+                echo "You did very bad";
+                break;
+            case "F":
+                echo "YOU FAIL!";
+                break;
+            default:
+                echo "Invalid Grade";
+        }
+    ?> -->
+
+
+
+    <!-- <h4>While Loops</h4>
+    <?php
+        $index = 1;
+        while($index <= 5){
+            echo "$index <br>";
+            $index++;   // without increment, it become infinite loop
+        }
+    ?>
+    <h4>Do-While Loops</h4>
+    <?php
+        $index = 6;
+        do{
+            echo "$index <br>";
+            $index++;
+        } while ($index <= 5);
+    ?> -->
+
+
+
+    <!-- <h4>For Loops</h4>
+    <?php
+        for ($i = 1; $i <= 5; $i++) {
+            echo "$i <br>";
+        }
+    ?>
+    <br><br><hr><br><br>
+    <?php
+        $luckyNumbers = array(3, 7, 13, 19, 23, 47);
+        for ($i = 0; $i <= count($luckyNumbers); $i++) {
+            echo "$luckyNumbers[$i]<br>";
+        }
+    ?> -->
+
+
+    <!-- <h4>Include HTML</h4>
+    <hr><br><br>
+    <?php include "header.html"; ?>
+    <p>Hello World</p>
+    <?php include "footer.html"; ?> -->
+
+
+    
+    <h4>Include PHP</h4>
+    <?php
+        $title = "My First Post";
+        $author = "Henry";
+        $wordCount = 400;
+        include "article-header.php";
+    ?>
+    <br><br><hr><br><br>
+    <?php
+        include "useful-tools.php";
+        echo $feetInMile;
+    ?>
+
+
 </body>
 </html>
