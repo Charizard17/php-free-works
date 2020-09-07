@@ -378,7 +378,7 @@
 
 
 
-    <h4>Inheritance</h4>
+    <!-- <h4>Inheritance</h4>
     <?php
         class Chef{
             function makeChicken(){
@@ -407,7 +407,7 @@
         $italianChef = new ItalianChef();
         $italianChef->makeSpecialDish()
 
-    ?>
+    ?> -->
 
 
 </body>
