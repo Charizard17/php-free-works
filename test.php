@@ -253,7 +253,7 @@
 
 
     
-    <h4>Include PHP</h4>
+    <!-- <h4>Include PHP</h4>
     <?php
         $title = "My First Post";
         $author = "Henry";
@@ -264,6 +264,149 @@
     <?php
         include "useful-tools.php";
         echo $feetInMile;
+    ?> -->
+
+
+    <!-- <h4>Classes and Objects</h4>
+    <?php
+        class Book{
+            var $title;
+            var $author;
+            var $pages;
+        }
+
+        $book1 = new Book;
+        $book1->title = "Harry Potter";
+        $book1->author = "JK Rowling";
+        $book1->pages = 500;
+
+        $book2 = new Book;
+        $book2->title = "Lord Of the Rings";
+        $book2->author = "Tolkien";
+        $book2->pages = 700;
+        
+        echo $book2->author;
+    ?> -->
+
+
+
+    <!-- <h4>Constructor</h4>
+    <?php
+        class Boook{
+            var $title;
+            var $author;
+            var $pages;
+
+            function __construct($aTitle, $aAuthor, $aPages) {
+                $this->title = $aTitle;
+                $this->author = $aAuthor;
+                $this->pages = $aPages;
+            }
+        }
+
+        $boook1 = new Boook("Harry Potter", "JK Rowling", 500);
+
+        $boook2 = new Boook("Lord Of the Rings", "Tolkien", 700);
+        
+        echo $boook1->author."<br>";
+        echo $boook2->title;
+    ?> -->
+
+
+
+    <!-- <h4>Object Functions</h4>
+    <?php
+        class Student{
+            var $name;
+            var $major;
+            var $gpa;
+
+            function __construct($name, $major, $gpa){
+                $this->name = $name;
+                $this->major = $major;
+                $this->gpa = $gpa;
+            }
+
+            function hasHonors(){
+                if($this->gpa >= 3.5){
+                    return "true";
+                }
+                return "false";
+            }
+        }
+
+        $student1 = new Student("Jim", "Business", 2.8);
+        $student2 = new Student("Pam", "Art", 3.6);
+
+        echo $student1->hasHonors();
+        echo "<br>";
+        echo $student2->hasHonors();
+    ?> -->
+
+
+
+    <!-- <h4>Getters and Setters</h4>
+    <?php
+        class Movie{
+            public $title;
+            private $rating;
+
+            function __construct($title, $rating){
+                $this->title = $title;
+                $this->rating = $rating;
+            }
+
+            function getRating(){
+                return $this->rating;
+            }
+
+            function setRating($rating){
+                if($rating == "G" || $rating == "PG" || $rating == "PG-13" || $rating == "R" || $rating == "NR" ){
+                    $this->rating = $rating;
+                } else {
+                    $this->rating = "NR";
+                }
+            }
+        } 
+        
+        $avengers = new Movie("Avengers", "PG-13");
+                // G, PG, PG-13, R, NR
+        $avengers->setRating("PG"); 
+        echo $avengers->getRating();
+
+    ?> -->
+
+
+
+    <h4>Inheritance</h4>
+    <?php
+        class Chef{
+            function makeChicken(){
+                echo "The chef makes chicken <br>";
+            }
+            function makeSalad(){
+                echo "The chef makes salad <br>";
+            }
+            function makeSpecialDish(){
+                echo "The chef makes bbq ribs <br>";
+            }
+        }
+
+        class ItalianChef extends Chef {
+            function makePasta(){
+                echo "The chef makes pasta";
+            }
+            function makeSpecialDish(){
+                echo "The chef makes chicken parm";
+            }
+        }
+
+        $chef = new Chef();
+        $chef->makeSpecialDish();
+
+        $italianChef = new ItalianChef();
+        $italianChef->makeSpecialDish()
+
     ?>
 
 
